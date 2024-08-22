@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_crud/components/UserTile.dart';
 import 'package:flutter_crud/data/dummy_users.dart';
 
-class UsersList extends StatelessWidget {
-  const UsersList({super.key});
+class UsersPage extends StatelessWidget {
+  const UsersPage({super.key});
   static const users = {...DUMMY_USERS};
 
   @override

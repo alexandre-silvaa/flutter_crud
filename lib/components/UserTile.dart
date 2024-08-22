@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/models/user.dart';
+import 'package:flutter_crud/models/user.model.dart';
 
 class UserTile extends StatelessWidget {
   final User user;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crud/pages/users-list/users-list.dart';
+import 'package:flutter_crud/pages/users/users.page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const UsersList(),
+      home: const UsersPage(),
     );
   }
 }
