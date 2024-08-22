@@ -19,30 +19,28 @@ class UsersProvider with ChangeNotifier {
     return _items.values.elementAt(i);
   }
 
-  void create(User user) {
-    final id = Random().nextDouble().toString();
-    _items.putIfAbsent(
-      id,
-      () => User(
-          id: id,
-          name: user.name,
-          email: user.email,
-          avatarUrl: user.avatarUrl),
-    );
-
-    notifyListeners();
-  }
-
-  void put(User user) {
+  void createOrPut(User user) {
+    print(user.id);
     if (user.id != null &&
         user.id!.trim().isNotEmpty &&
         _items.containsKey(user.id!)) {
-      _items.update(user.id!, (_) => user);
-
-      notifyListeners();
+      _items.update(
+        user.id!,
+        (_) => user,
+      );
+    } else {
+      final id = Random().nextDouble().toString();
+      _items.putIfAbsent(
+        id,
+        () => User(
+          id: id,
+          name: user.name,
+          email: user.email,
+          avatarUrl: user.avatarUrl,
+        ),
+      );
     }
-
-    return;
+    notifyListeners();
   }
 
   void remove(User user) {

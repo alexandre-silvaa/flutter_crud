@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/components/UserTile.dart';
 import 'package:flutter_crud/provider/users.provider.dart';
+import 'package:flutter_crud/routes/app.routes.dart';
 import 'package:provider/provider.dart';
 
 class UsersPage extends StatelessWidget {
@@ -12,10 +13,14 @@ class UsersPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Colors.cyan,
         actions: <Widget>[
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.USER_FORM,
+                );
+              },
               icon: const Icon(Icons.add),
               color: Colors.white),
         ],
